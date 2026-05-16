@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ManuHub – Kenya's premier online electronics store. Shop phones, laptops, TVs, cameras, speakers and more at unbeatable prices. Fast delivery across Nairobi and Kenya." />
+  <meta name="keywords" content="electronics Kenya, buy phones online, laptops Nairobi, TVs Kenya, ManuHub, online shopping Kenya, cameras, speakers, printers" />
+  <meta name="author" content="ManuHub" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="ManuHub – Electronics & Gadgets Store Kenya" />
+  <meta property="og:description" content="Shop the best electronics deals in Kenya. Phones, Laptops, TVs, Cameras & more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://manuhub.co.ke" />
+  <meta name="theme-color" content="#192C57" />
+  <title>Manu Shop – Electronics & Gadgets Store Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader" role="status" aria-label="Loading ManuShop">
+    <div class="preloader-inner">
+      <div class="preloader-logo">
+        <img src="manu-hub-logo.png" alt="ManuHub Logo" onerror="this.style.display='none'; document.getElementById('preloader-text').style.display='block'" />
+        <span id="preloader-text" class="preloader-brand" style="display:none">ManuHub</span>
+      </div>
+      <div class="blinking-dots" aria-hidden="true">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <p class="preloader-tagline">Loading your tech world…</p>
+    </div>
+  </div>
+
+  <!-- PAGE TRANSITION OVERLAY -->
+  <div id="page-transition" aria-hidden="true">
+    <div class="transition-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- SPECIAL OFFER BANNER -->
+  <div id="offer-banner" role="banner" aria-label="Special offer countdown">
+    <span class="offer-label">⚡ FLASH SALE ENDS IN:</span>
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="time-block"><span id="hours">48</span><small>HRS</small></div>
+      <div class="time-sep">:</div>
+      <div class="time-block"><span id="minutes">00</span><small>MIN</small></div>
+      <div class="time-sep">:</div>
+      <div class="time-block"><span id="seconds">00</span><small>SEC</small></div>
+    </div>
+    <span class="offer-cta">Up to <strong>40% OFF</strong> — Don't miss out!</span>
+    <button class="banner-close" id="bannerClose" aria-label="Close offer banner">✕</button>
+  </div>
+
+  <!-- HEADER -->
+  <header role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Manu Shop Home">
+        <img src="manu-hub-logo.png" alt="ManuHub" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'" />
+        <span class="logo-fallback" style="display:none">ManuShop</span>
+      </a>
+
+      <div class="header-search" role="search">
+        <input type="search" placeholder="Search phones, laptops, TVs…" aria-label="Search products" id="searchInput" />
+        <button class="search-btn" aria-label="Search" id="searchBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+      </div>
+
+      <div class="header-actions">
+        <a href="tel:0707408066" class="header-action" aria-label="Call us">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.27 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>0707 408 066</span>
+        </a>
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BAR -->
+  <nav role="navigation" aria-label="Product categories">
+    <div class="nav-inner">
+      <a href="#" class="nav-link active" data-category="all">All</a>
+      <a href="#" class="nav-link" data-category="phones">📱 Phones</a>
+      <a href="#" class="nav-link" data-category="laptops">💻 Laptops</a>
+      <a href="#" class="nav-link" data-category="tvs">📺 TVs</a>
+      <a href="#" class="nav-link" data-category="cameras">📷 Cameras</a>
+      <a href="#" class="nav-link" data-category="audio">🔊 Audio</a>
+      <a href="#" class="nav-link" data-category="accessories">🔌 Accessories</a>
+      <a href="#" class="nav-link" data-category="printers">🖨️ Printers</a>
+      <a href="#" class="nav-link" data-category="offers">🔥 Offers</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main role="main">
+
+    <!-- HERO SECTION -->
+    <section class="hero" aria-label="Hero banner">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Kenya's Tech Hub 🇰🇪</p>
+        <h1>The Gadgets You <span class="accent">Love.</span><br/>Prices You'll <span class="accent">Celebrate.</span></h1>
+        <p class="hero-sub">Phones, Laptops, TVs, Cameras & More — Delivered Fast Across Kenya.</p>
+        <div class="hero-btns">
+  <button class="btn-primary nav-trigger" data-action="shop">Shop Now</button>
+  <a href="tel:0707408066" class="btn-outline gold-phone-btn">
+    <!-- Clean Gold Phone SVG Icon -->
+    <svg class="gold-phone-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
+    </svg>
+    Call to Order
+  </a>
+</div>
+        <div class="hero-stats">
+          <div class="stat"><strong>5,000+</strong><span>Products</span></div>
+          <div class="stat"><strong>24hr</strong><span>Delivery</span></div>
+          <div class="stat"><strong>100%</strong><span>Genuine</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-img-wrap">
+          <img src="phones.png" alt="Latest smartphones" loading="lazy" onerror="this.parentElement.innerHTML='<div class=hero-img-placeholder>📱</div>'" />
+        </div>
+        <div class="hero-badge">New Arrivals</div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES QUICK ACCESS -->
+    <section class="categories-section" aria-labelledby="cats-heading">
+      <div class="section-header">
+        <h2 id="cats-heading">Shop by Category</h2>
+        <p>Browse our curated selection</p>
+      </div>
+      <div class="categories-grid">
+        <article class="cat-card nav-trigger" data-category="phones" role="button" tabindex="0" aria-label="Shop phones">
+          <div class="cat-icon"><img src="oppo-phone.png" alt="Phones" loading="lazy" onerror="this.src=''; this.parentElement.innerHTML='📱'" /></div>
+          <h3>Phones</h3>
+          <span>50+ Models</span>
+        </article>
+        <article class="cat-card nav-trigger" data-category="laptops" role="button" tabindex="0" aria-label="Shop laptops">
+          <div class="cat-icon"><img src="computer.png" alt="Laptops" loading="lazy" onerror="this.src=''; this.parentElement.innerHTML='💻'" /></div>
+          <h3>Laptops</h3>
+          <span>30+ Models</span>
+        </article>
+        <article class="cat-card nav-trigger" data-category="tvs" role="button" tabindex="0" aria-label="Shop TVs">
+          <div class="cat-icon"><img src="google-tv.png" alt="TVs" loading="lazy" onerror="this.src=''; this.parentElement.innerHTML='📺'" /></div>
+          <h3>Smart TVs</h3>
+          <span>20+ Sizes</span>
+        </article>
+        <article class="cat-card nav-trigger" data-category="cameras" role="button" tabindex="0" aria-label="Shop cameras">
+          <div class="cat-icon"><img src="camera.png" alt="Cameras" loading="lazy" onerror="this.src=''; this.parentElement.innerHTML='📷'" /></div>
+          <h3>Cameras</h3>
+          <span>15+ Models</span>
+        </article>
+        <article class="cat-card nav-trigger" data-category="audio" role="button" tabindex="0" aria-label="Shop audio">
+          <div class="cat-icon"><img src="speaker.png" alt="Speakers" loading="lazy" onerror="this.src=''; this.parentElement.innerHTML='🔊'" /></div>
+          <h3>Audio</h3>
+          <span>Speakers & More</span>
+        </article>
+        <article class="cat-card nav-trigger" data-category="accessories" role="button" tabindex="0" aria-label="Shop accessories">
+          <div class="cat-icon"><img src="usb.png" alt="Accessories" loading="lazy" onerror="this.src=''; this.parentElement.innerHTML='🔌'" /></div>
+          <h3>Accessories</h3>
+          <span>100+ Items</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS CAROUSEL -->
+    <section class="carousel-section" aria-labelledby="featured-heading">
+      <div class="section-header">
+        <h2 id="featured-heading">🔥 Featured Products</h2>
+        <p>Handpicked deals — updated daily</p>
+      </div>
+
+      <!-- SKELETON LOADING STATE -->
+      <div class="skeleton-carousel" id="skeletonCarousel" aria-label="Loading products" role="status">
+        <div class="skeleton-dots-center">
+          <span class="s-dot"></span>
+          <span class="s-dot"></span>
+          <span class="s-dot"></span>
+          <span class="s-dot"></span>
+        </div>
+        <div class="skeleton-track">
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+        </div>
+      </div>
+
+      <!-- ACTUAL CAROUSEL -->
+      <div class="carousel-wrap" id="carouselWrap" style="display:none" role="region" aria-label="Featured products carousel">
+        <button class="carousel-arrow left" id="carouselPrev" aria-label="Previous products">&#8249;</button>
+        <div class="carousel-track-outer">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Products inserted by JS -->
+          </div>
+        </div>
+        <button class="carousel-arrow right" id="carouselNext" aria-label="Next products">&#8250;</button>
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Carousel navigation"></div>
+      </div>
+    </section>
+
+    <!-- ALL PRODUCTS GRID -->
+    <section class="products-section" aria-labelledby="all-products-heading">
+      <div class="section-header">
+        <h2 id="all-products-heading">All Products</h2>
+        <div class="sort-filter">
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="default">Sort by: Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- SKELETON GRID -->
+      <div class="skeleton-grid" id="skeletonGrid" aria-label="Loading all products" role="status">
+        <div class="skeleton-dots-center">
+          <span class="s-dot"></span>
+          <span class="s-dot"></span>
+          <span class="s-dot"></span>
+          <span class="s-dot"></span>
+        </div>
+        <div class="sk-grid-inner">
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+          <div class="skeleton-card"><div class="sk-img"></div><div class="sk-line w80"></div><div class="sk-line w50"></div><div class="sk-line w60"></div></div>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid" style="display:none" aria-label="Products listing"></div>
+
+      <div class="no-results" id="noResults" style="display:none" role="alert">
+        <span>😕</span>
+        <p>No products found. Try a different search or category.</p>
+        <button class="btn-primary" id="clearFiltersBtn">Clear Filters</button>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="trust-section" aria-labelledby="trust-heading">
+      <div class="section-header">
+        <h2 id="trust-heading">Why Manu Shop?</h2>
+      </div>
+      <div class="trust-grid">
+        <article class="trust-card">
+          <div class="trust-icon">🚚</div>
+          <h3>Fast Delivery</h3>
+          <p>Nairobi same-day delivery. Nationwide within 24 hours. Real-time tracking available.</p>
+        </article>
+        <article class="trust-card">
+          <div class="trust-icon">✅</div>
+          <h3>100% Genuine</h3>
+          <p>Every product is sourced directly from manufacturers. Official warranty included.</p>
+        </article>
+        <article class="trust-card">
+          <div class="trust-icon">💳</div>
+          <h3>Flexible Payment</h3>
+          <p>M-Pesa, Card, Cash on Delivery. Buy now, pay later options available.</p>
+        </article>
+        <article class="trust-card">
+          <div class="trust-icon">🔄</div>
+          <h3>Easy Returns</h3>
+          <p>7-day hassle-free returns. No questions asked if you're not satisfied.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo-footer" aria-label="ManuHub">
+          <img src="manu-hub-logo.png" alt="ManuHub" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'" />
+          <span style="display:none" class="logo-fallback">Manu Shop</span>
+        </a>
+        <p>Kenya's most trusted electronics store. Quality products, unbeatable prices.</p>
+        <a href="tel:0707408066" class="footer-phone">0707 408 066</a>
+      </div>
+      <div class="footer-links">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Smartphones</a></li>
+          <li><a href="#">Laptops & PCs</a></li>
+          <li><a href="#">Smart TVs</a></li>
+          <li><a href="#">Cameras</a></li>
+          <li><a href="#">Audio & Speakers</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Returns Policy</a></li>
+          <li><a href="#">Warranty Info</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <p>📍 Nairobi, Kenya</p>
+        <p>📧 emmanuelmainye@gmail.com</p>
+        <p>⏰ Sun–Fri: 8am–8pm</p>
+        <div class="footer-social">
+          
+		  
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Manu Shop. All rights reserved. | Designed with Manu</p>
+    </div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <div class="modal-content">
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="" alt="" />
+        </div>
+        <div class="modal-info">
+          <span class="modal-badge" id="modalBadge"></span>
+          <h2 id="modalTitle"></h2>
+          <p class="modal-desc" id="modalDesc"></p>
+          <div class="modal-price-wrap">
+            <span class="modal-price" id="modalPrice"></span>
+            <span class="modal-oldprice" id="modalOldPrice"></span>
+          </div>
+          <div class="modal-actions">
+            <button class="btn-primary modal-buy" id="modalAddCart">🛒 Add to Cart</button>
+            <a class="btn-whatsapp" id="modalWhatsapp" href="#" target="_blank" rel="noopener">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="20" />
+              Order via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART SIDEBAR -->
+  <div id="cartSidebar" class="cart-sidebar" role="dialog" aria-modal="true" aria-label="Shopping cart" style="display:none">
+    <div class="cart-header">
+      <h3>🛒 My Cart</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">Total: <strong id="cartTotal">KSh 0</strong></div>
+      <a class="btn-whatsapp" id="checkoutWhatsapp" href="#" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="20" />
+        Checkout via WhatsApp
+      </a>
+    </div>
+    <div class="cart-empty" id="cartEmpty">
+      <span>🛒</span>
+      <p>Your cart is empty</p>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay" style="display:none"></div>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/254707408066?text=Hello%20ManuHub!%20I%20am%20interested%20in%20your%20products."
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat with us on WhatsApp"
+     title="Chat with us on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32" height="32"
+         onerror="this.parentElement.innerHTML += '💬'; this.remove()" />
+    <span class="wa-pulse"></span>
+  </a>
+
+  <!-- ERROR TOAST -->
+  <div id="errorToast" class="error-toast" role="alert" aria-live="assertive" style="display:none"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
